@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { FaCartArrowDown } from "react-icons/fa6";
-import  { PRODUCTS } from '../utils/products.js'
 
 
 const CardContainer = ({filterList}) => {
@@ -10,7 +9,7 @@ const CardContainer = ({filterList}) => {
   return (
     
     <>
-    <div className='products grid grid-cols-2 xl:grid-cols-5 lg:grid-col-3 gap-9 p-4 z-20'>
+    <div className='products grid grid-cols-2 xl:grid-cols-5 lg:grid-col-4 gap-9 p-4 z-20'>
       {
         filterList.map ((product,id)=>{
          return(

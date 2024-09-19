@@ -1,8 +1,11 @@
 import React from 'react'
+import Sidebar from '../components/Sidebar'
 
 const Favorites = () => {
   return (
-    <div>Favorites</div>
+    <div>
+      <Sidebar/>
+      Favorites</div>
   )
 }
 

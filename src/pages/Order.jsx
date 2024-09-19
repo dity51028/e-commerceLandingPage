@@ -1,9 +1,15 @@
 import React from 'react'
+import Sidebar from '../components/Sidebar'
 
 const Order = () => {
   return (
-    <div>Order</div>
+    <>
+      <Sidebar/>
+     <div>Order</div>
+  
+    </>
   )
+   
 }
 
 export default Order

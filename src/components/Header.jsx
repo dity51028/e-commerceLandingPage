@@ -6,6 +6,7 @@ import  { PRODUCTS } from '../utils/products.js';
 
 const Header = () => {
     const [filterList,setFilterList] = useState(PRODUCTS);
+   // const [filterArr,setFilterArr] = useState(PRODUCTS);
 
    /* useEffect(()=>{
     const searchHandler =(e)=>{
@@ -18,6 +19,15 @@ const Header = () => {
        },3000) 
     }
     },[filterList])*/
+
+    const handleClick = (str) =>{
+        const filterProduct = PRODUCTS.filter(
+            (product)=>product.title.toLowerCase().includes(str.toLowerCase()))
+        if(filterProduct.length!=0){
+            setFilterList(filterProduct)
+        }
+
+    }
 
     const searchHandler =(e)=>{
         const filterProduct = PRODUCTS.filter(
@@ -32,31 +42,31 @@ const Header = () => {
    <div className='w-full sticky top-0 z-10 bg-slate-100'>
    <div className='flex justify-between'>
         <div className='font-serif font-bold lg:text-5xl text-3xl ml-4 mt-4 text-blue-500'>E-Cart</div>
-        <div className='mt-4 mx-4 border border-blue-950 rounded-2xl flex items-center p-3 '>
-            <input type="text" placeholder='Search product' className='outline-0' onChange={searchHandler} />.
+        <div className='mt-4 mx-4 border border-blue-950  rounded-2xl flex items-center p-3 '>
+            <input type="text" placeholder='Search product' className='outline-0 bg-transparent' onChange={searchHandler} />.
             <button onClick={()=>searchHandler}><FaSearch/></button>
         </div>
     </div>
 
     <div className='categories flex space-x-6 p-4 mt-8 '>
         <div className='bg-black text-white px-5 py-2 rounded-full drop-shadow-xl cursor-pointer'>
-            <p>Watches</p>
+            <p onClick={() => handleClick('watch')}>Watches</p>
         </div>
 
         <div className='bg-white px-5 py-2 rounded-full drop-shadow-xl cursor-pointer'>
-            <p>Laptop</p>
+            <p onClick={() => handleClick('laptop')}>Laptop</p>
         </div>
 
         <div className='bg-white px-5 py-2 rounded-full drop-shadow-xl cursor-pointer'>
-            <p>Sunglass</p>
+            <p >Sunglass</p>
         </div>
 
         <div className='bg-white px-5 py-2 rounded-full drop-shadow-xl cursor-pointer'>
-            <p>Monitor</p>
+            <p onClick={() => handleClick('monitor')}>Monitor</p>
         </div>
 
         <div className='bg-white px-5 py-2 rounded-full drop-shadow-xl cursor-pointer'>
-            <p>Mouse</p>
+            <p onClick={() => handleClick('mouse')}>Mouse</p>
         </div>
 
         <div className='bg-white px-5 py-2 rounded-full drop-shadow-xl cursor-pointer'>
